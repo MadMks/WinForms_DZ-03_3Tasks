@@ -31,9 +31,16 @@ namespace Task_1_SearchFiles
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            searchForm = new SearchForm();
+            searchForm = new SearchForm(this.listBoxFoundFiles);
 
             searchForm.Show();
+
+            //if (this.listBoxFoundFiles.DataSource != null)
+            //{
+            //    MessageBox.Show("1");
+            //}
+
+            //this.listBoxFoundFiles.DataSource
         }
     }
 }
