@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,13 +16,15 @@ namespace Task_1_SearchFiles
     {
         ListBox listBox;
         string path;
+        //string fileMask;
 
         public SearchForm(ListBox _listBox)
         {
             InitializeComponent();
 
             this.listBox = _listBox;
-            path = null;
+            this.path = null;
+            //this.fileMask = null;
 
             this.Load += SearchForm_Load;
         }
@@ -37,28 +40,46 @@ namespace Task_1_SearchFiles
 
         private void ButtonSearchFormCancel_Click(object sender, EventArgs e)
         {
-            //this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
         private void ButtonSearchFiles_Click(object sender, EventArgs e)
         {
-            //
+            this.listBox.Items.Clear();
 
-            //this.DialogResult = DialogResult.OK;
             if (this.path != null)
             {
                 DirectoryInfo directoryInfo = new DirectoryInfo(this.path);
 
-                this.listBox.DataSource = directoryInfo.GetFiles();
+                //string fileMaskPattern = "^" + "*.txt" + "$";
+                string fileMaskPattern = null;
+
+                if (this.textBoxSearchMask.Text != "")
+                {
+                    fileMaskPattern = "^" + this.textBoxSearchMask.Text + "$";
+                }
+                else
+                {
+                    fileMaskPattern = "^" + "*.*" + "$";
+                }
+
+
+                Regex regex = new Regex(fileMaskPattern);
+
+
+                foreach (FileInfo item in directoryInfo.GetFiles())
+                {
+                    if (regex.IsMatch(item.Name) == true)
+                    {
+                        this.listBox.Items.Add(item);
+                    }
+                    
+                }
 
                 this.listBox.DisplayMember = Text;
             }
             
-            //this.listBox.ValueMember = Text;
-            //MessageBox.Show((dataSource as List<string>)[0]);
-            //MessageBox.Show(directoryInfo.GetFiles()[0].ToString());
-            this.Close();
+            //this.Close();
         }
 
         private void ButtonSelectAFolder_Click(object sender, EventArgs e)
@@ -71,7 +92,7 @@ namespace Task_1_SearchFiles
 
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
-                this.Text = folderBrowserDialog.SelectedPath;
+                //this.Text = folderBrowserDialog.SelectedPath;
                 this.path = folderBrowserDialog.SelectedPath;
             }
         }
