@@ -35,12 +35,14 @@
             this.labelSearchMask = new System.Windows.Forms.Label();
             this.textBoxShowFullPath = new System.Windows.Forms.TextBox();
             this.groupBoxSelectAFolder = new System.Windows.Forms.GroupBox();
+            this.groupBoxInputMask = new System.Windows.Forms.GroupBox();
             this.groupBoxSelectAFolder.SuspendLayout();
+            this.groupBoxInputMask.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSelectAFolder
             // 
-            this.buttonSelectAFolder.Location = new System.Drawing.Point(57, 60);
+            this.buttonSelectAFolder.Location = new System.Drawing.Point(71, 60);
             this.buttonSelectAFolder.Name = "buttonSelectAFolder";
             this.buttonSelectAFolder.Size = new System.Drawing.Size(120, 23);
             this.buttonSelectAFolder.TabIndex = 0;
@@ -49,14 +51,14 @@
             // 
             // textBoxSearchMask
             // 
-            this.textBoxSearchMask.Location = new System.Drawing.Point(156, 146);
+            this.textBoxSearchMask.Location = new System.Drawing.Point(144, 27);
             this.textBoxSearchMask.Name = "textBoxSearchMask";
             this.textBoxSearchMask.Size = new System.Drawing.Size(100, 21);
             this.textBoxSearchMask.TabIndex = 1;
             // 
             // buttonSearchFiles
             // 
-            this.buttonSearchFiles.Location = new System.Drawing.Point(30, 213);
+            this.buttonSearchFiles.Location = new System.Drawing.Point(39, 219);
             this.buttonSearchFiles.Name = "buttonSearchFiles";
             this.buttonSearchFiles.Size = new System.Drawing.Size(102, 23);
             this.buttonSearchFiles.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             // buttonSearchFormCancel
             // 
-            this.buttonSearchFormCancel.Location = new System.Drawing.Point(164, 213);
+            this.buttonSearchFormCancel.Location = new System.Drawing.Point(175, 219);
             this.buttonSearchFormCancel.Name = "buttonSearchFormCancel";
             this.buttonSearchFormCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonSearchFormCancel.TabIndex = 3;
@@ -75,7 +77,7 @@
             // labelSearchMask
             // 
             this.labelSearchMask.AutoSize = true;
-            this.labelSearchMask.Location = new System.Drawing.Point(27, 152);
+            this.labelSearchMask.Location = new System.Drawing.Point(9, 31);
             this.labelSearchMask.Name = "labelSearchMask";
             this.labelSearchMask.Size = new System.Drawing.Size(120, 13);
             this.labelSearchMask.TabIndex = 4;
@@ -101,22 +103,33 @@
             this.groupBoxSelectAFolder.TabStop = false;
             this.groupBoxSelectAFolder.Text = "Выбор папки";
             // 
+            // groupBoxInputMask
+            // 
+            this.groupBoxInputMask.Controls.Add(this.labelSearchMask);
+            this.groupBoxInputMask.Controls.Add(this.textBoxSearchMask);
+            this.groupBoxInputMask.Location = new System.Drawing.Point(12, 136);
+            this.groupBoxInputMask.Name = "groupBoxInputMask";
+            this.groupBoxInputMask.Size = new System.Drawing.Size(262, 62);
+            this.groupBoxInputMask.TabIndex = 7;
+            this.groupBoxInputMask.TabStop = false;
+            this.groupBoxInputMask.Text = "Ввод маски";
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(286, 264);
+            this.Controls.Add(this.groupBoxInputMask);
             this.Controls.Add(this.groupBoxSelectAFolder);
-            this.Controls.Add(this.labelSearchMask);
             this.Controls.Add(this.buttonSearchFormCancel);
             this.Controls.Add(this.buttonSearchFiles);
-            this.Controls.Add(this.textBoxSearchMask);
             this.Name = "SearchForm";
             this.Text = "SearchForm";
             this.groupBoxSelectAFolder.ResumeLayout(false);
             this.groupBoxSelectAFolder.PerformLayout();
+            this.groupBoxInputMask.ResumeLayout(false);
+            this.groupBoxInputMask.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -129,5 +142,6 @@
         private System.Windows.Forms.Label labelSearchMask;
         private System.Windows.Forms.TextBox textBoxShowFullPath;
         private System.Windows.Forms.GroupBox groupBoxSelectAFolder;
+        private System.Windows.Forms.GroupBox groupBoxInputMask;
     }
 }
