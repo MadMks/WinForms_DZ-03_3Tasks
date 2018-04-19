@@ -60,7 +60,7 @@ namespace Task_1_SearchFiles
                 }
                 else
                 {
-                    fileMaskPattern = "^" + "*.*" + "$";
+                    fileMaskPattern = "^$";
                 }
 
 
@@ -84,17 +84,35 @@ namespace Task_1_SearchFiles
 
         private void ButtonSelectAFolder_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
 
-            folderBrowserDialog.RootFolder = Environment.SpecialFolder.LocalizedResources;
-            folderBrowserDialog.ShowNewFolderButton = false;
+            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
+            {
+                folderBrowserDialog.RootFolder 
+                    = Environment.SpecialFolder.LocalizedResources;
+                folderBrowserDialog.ShowNewFolderButton = false;
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //this.Text = folderBrowserDialog.SelectedPath;
+                    this.path = folderBrowserDialog.SelectedPath;
+
+                    this.textBoxShowFullPath.Text = folderBrowserDialog.SelectedPath;
+                }
+            }
+
+            //FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+
+            //folderBrowserDialog.RootFolder = Environment.SpecialFolder.LocalizedResources;
+            //folderBrowserDialog.ShowNewFolderButton = false;
             
 
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                //this.Text = folderBrowserDialog.SelectedPath;
-                this.path = folderBrowserDialog.SelectedPath;
-            }
+            //if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    //this.Text = folderBrowserDialog.SelectedPath;
+            //    this.path = folderBrowserDialog.SelectedPath;
+
+            //    this.textBoxShowFullPath.Text = folderBrowserDialog.SelectedPath;
+            //}
         }
 
         

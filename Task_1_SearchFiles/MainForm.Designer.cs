@@ -36,9 +36,9 @@
             // 
             this.buttonSearch.Location = new System.Drawing.Point(13, 229);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.Size = new System.Drawing.Size(121, 23);
             this.buttonSearch.TabIndex = 0;
-            this.buttonSearch.Text = "Поиск";
+            this.buttonSearch.Text = "Поиск файлов";
             this.buttonSearch.UseVisualStyleBackColor = true;
             // 
             // listBoxFoundFiles
@@ -46,14 +46,14 @@
             this.listBoxFoundFiles.FormattingEnabled = true;
             this.listBoxFoundFiles.Location = new System.Drawing.Point(13, 13);
             this.listBoxFoundFiles.Name = "listBoxFoundFiles";
-            this.listBoxFoundFiles.Size = new System.Drawing.Size(261, 186);
+            this.listBoxFoundFiles.Size = new System.Drawing.Size(395, 186);
             this.listBoxFoundFiles.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 264);
+            this.ClientSize = new System.Drawing.Size(420, 264);
             this.Controls.Add(this.listBoxFoundFiles);
             this.Controls.Add(this.buttonSearch);
             this.Name = "MainForm";
