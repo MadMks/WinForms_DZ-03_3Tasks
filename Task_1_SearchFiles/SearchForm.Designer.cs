@@ -124,7 +124,7 @@
             this.Controls.Add(this.buttonSearchFormCancel);
             this.Controls.Add(this.buttonSearchFiles);
             this.Name = "SearchForm";
-            this.Text = "SearchForm";
+            this.Text = "Поиск файлов";
             this.groupBoxSelectAFolder.ResumeLayout(false);
             this.groupBoxSelectAFolder.PerformLayout();
             this.groupBoxInputMask.ResumeLayout(false);
