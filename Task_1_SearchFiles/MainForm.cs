@@ -12,6 +12,9 @@ namespace Task_1_SearchFiles
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Форма поиска.
+        /// </summary>
         private SearchForm searchForm;
 
 
@@ -22,25 +25,35 @@ namespace Task_1_SearchFiles
             this.Load += MainForm_Load;
         }
 
+
+        /// <summary>
+        /// Обработчик загрузки главной формы.
+        /// </summary>
         private void MainForm_Load(object sender, EventArgs e)
         {
             searchForm = null;
 
             this.buttonSearch.Click += ButtonSearch_Click;
+            this.buttonCancel.Click += ButtonCancel_Click;
         }
 
+        /// <summary>
+        /// Обработчик кнопки закрытия главного окна.
+        /// </summary>
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        /// <summary>
+        /// Обработчик открытия окна поиска.
+        /// </summary>
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
             searchForm = new SearchForm(this.listBoxFoundFiles);
 
             searchForm.Show();
-
-            //if (this.listBoxFoundFiles.DataSource != null)
-            //{
-            //    MessageBox.Show("1");
-            //}
-
-            //this.listBoxFoundFiles.DataSource
         }
     }
 }

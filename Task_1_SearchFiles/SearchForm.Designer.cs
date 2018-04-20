@@ -123,6 +123,8 @@
             this.Controls.Add(this.groupBoxSelectAFolder);
             this.Controls.Add(this.buttonSearchFormCancel);
             this.Controls.Add(this.buttonSearchFiles);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SearchForm";
             this.Text = "Поиск файлов";
             this.groupBoxSelectAFolder.ResumeLayout(false);

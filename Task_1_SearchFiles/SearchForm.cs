@@ -14,21 +14,39 @@ namespace Task_1_SearchFiles
 {
     public partial class SearchForm : Form
     {
-        ListBox listBox;
-        string path;
-        //string fileMask;
+        /// <summary>
+        /// Список найденных файлов.
+        /// </summary>
+        private ListBox listBox;
+        /// <summary>
+        /// Путь поиска файлов.
+        /// </summary>
+        private string path;
 
+
+
+        /// <summary>
+        /// Конструктор с параметром.
+        /// </summary>
+        /// <param name="_listBox">Список файлов.</param>
         public SearchForm(ListBox _listBox)
         {
             InitializeComponent();
 
             this.listBox = _listBox;
             this.path = null;
-            //this.fileMask = null;
 
             this.Load += SearchForm_Load;
         }
 
+
+
+        // Обработчики.
+
+
+        /// <summary>
+        /// Обработчик загрузки формы поиска.
+        /// </summary>
         private void SearchForm_Load(object sender, EventArgs e)
         {
             this.buttonSelectAFolder.Click += ButtonSelectAFolder_Click;
@@ -38,50 +56,34 @@ namespace Task_1_SearchFiles
             this.buttonSearchFormCancel.Click += ButtonSearchFormCancel_Click;
         }
 
+
+        /// <summary>
+        /// Обработчик кнопки отмены поиска.
+        /// </summary>
         private void ButtonSearchFormCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+        /// <summary>
+        /// Обработчик кнопки поиска файлов.
+        /// </summary>
         private void ButtonSearchFiles_Click(object sender, EventArgs e)
         {
             this.listBox.Items.Clear();
 
+            // Если папка выбрана.
             if (this.path != null)
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(this.path);
-
-                //string fileMaskPattern = "^" + "*.txt" + "$";
-                string fileMaskPattern = null;
-
-                if (this.textBoxSearchMask.Text != "")
-                {
-                    fileMaskPattern = "^" + this.textBoxSearchMask.Text + "$";
-                }
-                else
-                {
-                    fileMaskPattern = "^$";
-                }
-
-
-                Regex regex = new Regex(fileMaskPattern);
-
-
-                foreach (FileInfo item in directoryInfo.GetFiles())
-                {
-                    if (regex.IsMatch(item.Name) == true)
-                    {
-                        this.listBox.Items.Add(item);
-                    }
-                    
-                }
-
-                this.listBox.DisplayMember = Text;
+                this.AddToTheListFoundFiles();
             }
-            
-            //this.Close();
         }
 
+
+        /// <summary>
+        /// Обработчик выбора папки, в которой будет производиться поиск файлов.
+        /// </summary>
         private void ButtonSelectAFolder_Click(object sender, EventArgs e)
         {
 
@@ -93,29 +95,56 @@ namespace Task_1_SearchFiles
 
                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //this.Text = folderBrowserDialog.SelectedPath;
                     this.path = folderBrowserDialog.SelectedPath;
 
                     this.textBoxShowFullPath.Text = folderBrowserDialog.SelectedPath;
                 }
             }
-
-            //FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-
-            //folderBrowserDialog.RootFolder = Environment.SpecialFolder.LocalizedResources;
-            //folderBrowserDialog.ShowNewFolderButton = false;
-            
-
-            //if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    //this.Text = folderBrowserDialog.SelectedPath;
-            //    this.path = folderBrowserDialog.SelectedPath;
-
-            //    this.textBoxShowFullPath.Text = folderBrowserDialog.SelectedPath;
-            //}
         }
 
-        
+
+
+        // Методы.
+
+
+        /// <summary>
+        /// Добавить в список файлов найденные файлы,
+        /// по указанному пути и маске.
+        /// </summary>
+        private void AddToTheListFoundFiles()
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(this.path);
+            
+
+            Regex regex = new Regex(ComputeFileMaskPattern());
+
+
+            foreach (FileInfo item in directoryInfo.GetFiles())
+            {
+                if (regex.IsMatch(item.Name) == true)
+                {
+                    this.listBox.Items.Add(item);
+                }
+
+            }
+        }
+
+
+        /// <summary>
+        /// Вычисляем шаблон маски файла для поиска.
+        /// </summary>
+        /// <returns>Строка шаблона.</returns>
+        private string ComputeFileMaskPattern()
+        {
+            if (this.textBoxSearchMask.Text == "")
+            {
+                return "^$";
+            }
+            else
+            {
+                return "^" + this.textBoxSearchMask.Text + "$";
+            }
+        }
 
 
     }
