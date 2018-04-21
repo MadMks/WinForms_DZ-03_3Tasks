@@ -16,9 +16,10 @@ namespace Task_2_ComponentsOfPc
         private Product product;
         private bool isAddition;
 
-        public AddAndEditForm() // TODO FIX
+        public AddAndEditForm()
         {
-            InitializeComponent();
+            MessageBox.Show("Форма должна вызываться с параметрами", "Ошибка",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public AddAndEditForm(Product product, bool isAddition)

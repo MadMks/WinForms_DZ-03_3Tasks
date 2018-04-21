@@ -43,7 +43,7 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(12, 21);
+            this.labelName.Location = new System.Drawing.Point(12, 23);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(55, 13);
             this.labelName.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(89, 13);
+            this.textBoxName.Location = new System.Drawing.Point(116, 19);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(263, 21);
             this.textBoxName.TabIndex = 1;
@@ -59,7 +59,7 @@
             // labelCharacteristic
             // 
             this.labelCharacteristic.AutoSize = true;
-            this.labelCharacteristic.Location = new System.Drawing.Point(12, 53);
+            this.labelCharacteristic.Location = new System.Drawing.Point(12, 62);
             this.labelCharacteristic.Name = "labelCharacteristic";
             this.labelCharacteristic.Size = new System.Drawing.Size(90, 13);
             this.labelCharacteristic.TabIndex = 2;
@@ -67,15 +67,15 @@
             // 
             // textBoxCharacteristic
             // 
-            this.textBoxCharacteristic.Location = new System.Drawing.Point(119, 50);
+            this.textBoxCharacteristic.Location = new System.Drawing.Point(116, 59);
             this.textBoxCharacteristic.Name = "textBoxCharacteristic";
-            this.textBoxCharacteristic.Size = new System.Drawing.Size(233, 21);
+            this.textBoxCharacteristic.Size = new System.Drawing.Size(263, 21);
             this.textBoxCharacteristic.TabIndex = 3;
             // 
             // labelDescription
             // 
             this.labelDescription.AutoSize = true;
-            this.labelDescription.Location = new System.Drawing.Point(12, 91);
+            this.labelDescription.Location = new System.Drawing.Point(12, 101);
             this.labelDescription.Name = "labelDescription";
             this.labelDescription.Size = new System.Drawing.Size(56, 13);
             this.labelDescription.TabIndex = 4;
@@ -83,15 +83,15 @@
             // 
             // textBoxDescription
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(119, 91);
+            this.textBoxDescription.Location = new System.Drawing.Point(116, 97);
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(233, 21);
+            this.textBoxDescription.Size = new System.Drawing.Size(263, 21);
             this.textBoxDescription.TabIndex = 5;
             // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
-            this.labelPrice.Location = new System.Drawing.Point(12, 123);
+            this.labelPrice.Location = new System.Drawing.Point(12, 140);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(33, 13);
             this.labelPrice.TabIndex = 6;
@@ -99,25 +99,25 @@
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(93, 122);
+            this.textBoxPrice.Location = new System.Drawing.Point(116, 136);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(100, 21);
             this.textBoxPrice.TabIndex = 7;
             // 
             // buttonAddOrEdit
             // 
-            this.buttonAddOrEdit.Location = new System.Drawing.Point(27, 219);
+            this.buttonAddOrEdit.Location = new System.Drawing.Point(35, 209);
             this.buttonAddOrEdit.Name = "buttonAddOrEdit";
-            this.buttonAddOrEdit.Size = new System.Drawing.Size(108, 23);
+            this.buttonAddOrEdit.Size = new System.Drawing.Size(127, 33);
             this.buttonAddOrEdit.TabIndex = 8;
             this.buttonAddOrEdit.Text = "Добавить";
             this.buttonAddOrEdit.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(246, 219);
+            this.buttonCancel.Location = new System.Drawing.Point(226, 209);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(127, 33);
             this.buttonCancel.TabIndex = 9;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -137,6 +137,8 @@
             this.Controls.Add(this.labelCharacteristic);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AddAndEditForm";
             this.Text = "Добавление товара";
             this.ResumeLayout(false);

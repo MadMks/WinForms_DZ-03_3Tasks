@@ -57,9 +57,6 @@ namespace Task_2_ComponentsOfPc
             );
 
 
-            //this.comboBoxNameOfAllGoods.DataSource = this.ListOfProducts;
-            //this.comboBoxNameOfAllGoods.DisplayMember = this.ListOfProducts.ToString();
-
             this.comboBoxNameOfAllGoods.SelectedIndex = 0;
             this.textBoxPrice.Text 
                 = (this.comboBoxNameOfAllGoods.SelectedItem as Product).Price.ToString();
@@ -80,12 +77,6 @@ namespace Task_2_ComponentsOfPc
 
         private void ButtonEditProduct_Click(object sender, EventArgs e)
         {
-            //if (this.comboBoxNameOfAllGoods.SelectedIndex == -1)
-            //{
-            //    MessageBox.Show("Вы не выбрали товар для редактирования", "Ошибка",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-
             int tempSelectIndex = this.comboBoxNameOfAllGoods.SelectedIndex;
 
             this.product = (this.comboBoxNameOfAllGoods.Items[tempSelectIndex] as Product);
@@ -110,7 +101,6 @@ namespace Task_2_ComponentsOfPc
             if (addForm.ShowDialog() == DialogResult.OK)
             {
                 this.comboBoxNameOfAllGoods.Items.Add(this.product);
-                //this.ListOfProducts.Add(product);
             }
         }
 
