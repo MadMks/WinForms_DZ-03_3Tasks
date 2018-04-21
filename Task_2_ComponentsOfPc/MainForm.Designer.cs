@@ -184,6 +184,8 @@
             this.Controls.Add(this.groupBoxSalesList);
             this.Controls.Add(this.groupBoxSelectionOfGoods);
             this.Controls.Add(this.buttonAddToSalesList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Учет продаж";
             this.groupBoxSelectionOfGoods.ResumeLayout(false);
