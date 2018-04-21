@@ -53,7 +53,7 @@
             // 
             this.textBoxName.Location = new System.Drawing.Point(89, 13);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(100, 21);
+            this.textBoxName.Size = new System.Drawing.Size(263, 21);
             this.textBoxName.TabIndex = 1;
             // 
             // labelCharacteristic
@@ -69,7 +69,7 @@
             // 
             this.textBoxCharacteristic.Location = new System.Drawing.Point(119, 50);
             this.textBoxCharacteristic.Name = "textBoxCharacteristic";
-            this.textBoxCharacteristic.Size = new System.Drawing.Size(100, 21);
+            this.textBoxCharacteristic.Size = new System.Drawing.Size(233, 21);
             this.textBoxCharacteristic.TabIndex = 3;
             // 
             // labelDescription
@@ -85,7 +85,7 @@
             // 
             this.textBoxDescription.Location = new System.Drawing.Point(119, 91);
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(100, 21);
+            this.textBoxDescription.Size = new System.Drawing.Size(233, 21);
             this.textBoxDescription.TabIndex = 5;
             // 
             // labelPrice
@@ -126,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 264);
+            this.ClientSize = new System.Drawing.Size(391, 264);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAddOrEdit);
             this.Controls.Add(this.textBoxPrice);

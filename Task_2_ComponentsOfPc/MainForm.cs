@@ -15,6 +15,8 @@ namespace Task_2_ComponentsOfPc
         public List<Product> ListOfProducts { get; set; }
         public float TotalCost { get; set; }
 
+        public Product product { get; set; }
+
         public MainForm()
         {
             InitializeComponent();
@@ -24,35 +26,38 @@ namespace Task_2_ComponentsOfPc
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.ListOfProducts = new List<Product>
-            {
-                new Product
+            this.comboBoxNameOfAllGoods.Items.AddRange(
+                new Product[] 
                 {
-                    Name = "NVidia RX-450",
-                    Characteristic = "2 Gb, GDDR4",
-                    Description = "Вентиляторы Wing-Blade + радиатор",
-                    //Price = 10000
-                    Price = 1
-                },
-                new Product
-                {
-                    Name = "Жесткий диск Western Digital",
-                    Characteristic = "500 Gb, 5400rpm",
-                    Description = "Внутренний",
-                    //Price = 1226
-                    Price = 2
-                },
-                new Product
-                {
-                    Name = "Материнская плата Asus EX-B250-V7",
-                    Characteristic = "s1151,Intel B250",
-                    Description = "Нет встроенного RAID",
-                    //Price = 2599
-                    Price = 3
+                    new Product
+                    {
+                        Name = "NVidia RX-450",
+                        Characteristic = "2 Gb, GDDR4",
+                        Description = "Вентиляторы Wing-Blade + радиатор",
+                        //Price = 10000
+                        Price = 1
+                    },
+                    new Product
+                    {
+                        Name = "Жесткий диск Western Digital",
+                        Characteristic = "500 Gb, 5400rpm",
+                        Description = "Внутренний",
+                        //Price = 1226
+                        Price = 2
+                    },
+                    new Product
+                    {
+                        Name = "Материнская плата Asus EX-B250-V7",
+                        Characteristic = "s1151,Intel B250",
+                        Description = "Нет встроенного RAID",
+                        //Price = 2599
+                        Price = 3
+                    }
                 }
-            };
+            );
 
-            this.comboBoxNameOfAllGoods.DataSource = this.ListOfProducts;
+
+            //this.comboBoxNameOfAllGoods.DataSource = this.ListOfProducts;
             //this.comboBoxNameOfAllGoods.DisplayMember = this.ListOfProducts.ToString();
 
             this.comboBoxNameOfAllGoods.SelectedIndex = 0;
@@ -60,12 +65,53 @@ namespace Task_2_ComponentsOfPc
                 = (this.comboBoxNameOfAllGoods.SelectedItem as Product).Price.ToString();
 
 
+            this.product = null;
+
             this.comboBoxNameOfAllGoods.SelectedIndexChanged
                 += ComboBoxNameOfAllGoods_SelectedIndexChanged;
 
 
             this.buttonAddToSalesList.Click
                 += ButtonAddToSalesList_Click;
+
+            this.buttonAddProduct.Click += ButtonAddProduct_Click;
+            this.buttonEditProduct.Click += ButtonEditProduct_Click;
+        }
+
+        private void ButtonEditProduct_Click(object sender, EventArgs e)
+        {
+            //if (this.comboBoxNameOfAllGoods.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Вы не выбрали товар для редактирования", "Ошибка",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+
+            int tempSelectIndex = this.comboBoxNameOfAllGoods.SelectedIndex;
+
+            this.product = (this.comboBoxNameOfAllGoods.Items[tempSelectIndex] as Product);
+
+            AddAndEditForm editForm = new AddAndEditForm(this.product, false);
+
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                this.comboBoxNameOfAllGoods.Items.RemoveAt(tempSelectIndex);
+
+                this.comboBoxNameOfAllGoods.Items.Insert(tempSelectIndex, this.product);
+                this.comboBoxNameOfAllGoods.SelectedIndex = tempSelectIndex;
+            }
+        }
+
+        private void ButtonAddProduct_Click(object sender, EventArgs e)
+        {
+            this.product = new Product();
+
+            AddAndEditForm addForm = new AddAndEditForm(this.product, true);
+
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                this.comboBoxNameOfAllGoods.Items.Add(this.product);
+                //this.ListOfProducts.Add(product);
+            }
         }
 
         private void ComboBoxNameOfAllGoods_SelectedIndexChanged(object sender, EventArgs e)
