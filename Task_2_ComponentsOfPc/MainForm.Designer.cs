@@ -35,6 +35,7 @@
             this.labelTotalCost = new System.Windows.Forms.Label();
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.buttonEditProduct = new System.Windows.Forms.Button();
+            this.labelPriceProduct = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxSalesList
@@ -50,15 +51,15 @@
             this.comboBoxNameOfAllGoods.FormattingEnabled = true;
             this.comboBoxNameOfAllGoods.Location = new System.Drawing.Point(140, 13);
             this.comboBoxNameOfAllGoods.Name = "comboBoxNameOfAllGoods";
-            this.comboBoxNameOfAllGoods.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxNameOfAllGoods.Size = new System.Drawing.Size(475, 21);
             this.comboBoxNameOfAllGoods.TabIndex = 1;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(140, 50);
+            this.textBoxPrice.Location = new System.Drawing.Point(191, 50);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.ReadOnly = true;
-            this.textBoxPrice.Size = new System.Drawing.Size(100, 21);
+            this.textBoxPrice.Size = new System.Drawing.Size(70, 21);
             this.textBoxPrice.TabIndex = 2;
             // 
             // buttonAddToSalesList
@@ -75,9 +76,9 @@
             this.labelTotalCost.AutoSize = true;
             this.labelTotalCost.Location = new System.Drawing.Point(12, 122);
             this.labelTotalCost.Name = "labelTotalCost";
-            this.labelTotalCost.Size = new System.Drawing.Size(35, 13);
+            this.labelTotalCost.Size = new System.Drawing.Size(13, 13);
             this.labelTotalCost.TabIndex = 4;
-            this.labelTotalCost.Text = "label1";
+            this.labelTotalCost.Text = "0";
             // 
             // buttonAddProduct
             // 
@@ -97,11 +98,21 @@
             this.buttonEditProduct.Text = "Редактировать товар";
             this.buttonEditProduct.UseVisualStyleBackColor = true;
             // 
+            // labelPriceProduct
+            // 
+            this.labelPriceProduct.AutoSize = true;
+            this.labelPriceProduct.Location = new System.Drawing.Point(147, 53);
+            this.labelPriceProduct.Name = "labelPriceProduct";
+            this.labelPriceProduct.Size = new System.Drawing.Size(33, 13);
+            this.labelPriceProduct.TabIndex = 7;
+            this.labelPriceProduct.Text = "Цена";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 264);
+            this.ClientSize = new System.Drawing.Size(627, 264);
+            this.Controls.Add(this.labelPriceProduct);
             this.Controls.Add(this.buttonEditProduct);
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.labelTotalCost);
@@ -125,6 +136,7 @@
         private System.Windows.Forms.Label labelTotalCost;
         private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.Button buttonEditProduct;
+        private System.Windows.Forms.Label labelPriceProduct;
     }
 }
 
