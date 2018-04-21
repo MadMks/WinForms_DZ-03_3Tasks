@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,6 +32,18 @@ namespace Task_2_ComponentsOfPc
 
             this.buttonAddOrEdit.Click += ButtonAddOrEdit_Click;
             this.buttonCancel.Click += ButtonCancel_Click;
+
+            this.textBoxPrice.TextChanged += TextBoxPrice_TextChanged;
+        }
+
+        private void TextBoxPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (this.IsOnlyNumbersAreEntered(sender) != true)
+            {
+                MessageBox.Show("В поле цены можно вводить только цыфры");
+
+                (sender as TextBox).Text = "0";
+            }
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
@@ -48,6 +61,8 @@ namespace Task_2_ComponentsOfPc
                 MessageBox.Show("Нужно заполнить все поля.");
                 return;
             }
+
+            
 
             if (this.product == null)
             {
@@ -72,11 +87,31 @@ namespace Task_2_ComponentsOfPc
                 this.textBoxPrice.Text = this.product.Price.ToString();
 
                 this.Text = "Редактирование товара";
+                this.buttonAddOrEdit.Text = "Редактировать";
             }
             else if (this.isAddition == true)
             {
                 this.Text = "Добавление товара";
+                this.buttonAddOrEdit.Text = "Добавить";
             }
         }
+
+
+        private bool IsOnlyNumbersAreEntered(object sender)
+        {
+            string quantityPattern = @"^\d+$";
+            Regex regex = new Regex(quantityPattern);   // регулярное выражение.
+
+            if (regex.IsMatch((sender as TextBox).Text) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }

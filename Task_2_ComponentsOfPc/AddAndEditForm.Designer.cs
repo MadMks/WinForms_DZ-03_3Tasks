@@ -108,14 +108,14 @@
             // 
             this.buttonAddOrEdit.Location = new System.Drawing.Point(27, 219);
             this.buttonAddOrEdit.Name = "buttonAddOrEdit";
-            this.buttonAddOrEdit.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddOrEdit.Size = new System.Drawing.Size(108, 23);
             this.buttonAddOrEdit.TabIndex = 8;
             this.buttonAddOrEdit.Text = "Добавить";
             this.buttonAddOrEdit.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(155, 219);
+            this.buttonCancel.Location = new System.Drawing.Point(246, 219);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 9;
