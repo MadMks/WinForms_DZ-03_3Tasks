@@ -13,6 +13,7 @@ namespace Task_2_ComponentsOfPc
     public partial class MainForm : Form
     {
         public List<Product> ListOfProducts { get; set; }
+        public float TotalCost { get; set; }
 
         public MainForm()
         {
@@ -30,21 +31,24 @@ namespace Task_2_ComponentsOfPc
                     Name = "NVidia RX-450",
                     Characteristic = "2 Gb, GDDR4",
                     Description = "Вентиляторы Wing-Blade + радиатор",
-                    Price = 10000
+                    //Price = 10000
+                    Price = 1
                 },
                 new Product
                 {
                     Name = "Жесткий диск Western Digital",
                     Characteristic = "500 Gb, 5400rpm",
                     Description = "Внутренний",
-                    Price = 1226
+                    //Price = 1226
+                    Price = 2
                 },
                 new Product
                 {
                     Name = "Материнская плата Asus EX-B250-V7",
                     Characteristic = "s1151,Intel B250",
                     Description = "Нет встроенного RAID",
-                    Price = 2599
+                    //Price = 2599
+                    Price = 3
                 }
             };
 
@@ -54,6 +58,30 @@ namespace Task_2_ComponentsOfPc
             this.comboBoxNameOfAllGoods.SelectedIndex = 0;
             this.textBoxPrice.Text 
                 = (this.comboBoxNameOfAllGoods.SelectedItem as Product).Price.ToString();
+
+
+            this.comboBoxNameOfAllGoods.SelectedIndexChanged
+                += ComboBoxNameOfAllGoods_SelectedIndexChanged;
+
+
+            this.buttonAddToSalesList.Click
+                += ButtonAddToSalesList_Click;
+        }
+
+        private void ComboBoxNameOfAllGoods_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.textBoxPrice.Text
+                = (this.comboBoxNameOfAllGoods.SelectedItem as Product).Price.ToString();
+        }
+
+        private void ButtonAddToSalesList_Click(object sender, EventArgs e)
+        {
+            this.listBoxSalesList.Items.Add(this.comboBoxNameOfAllGoods.SelectedItem);
+
+            this.TotalCost
+                += (this.comboBoxNameOfAllGoods.SelectedItem as Product).Price;
+
+            this.labelTotalCost.Text = this.TotalCost.ToString();
         }
     }
 }

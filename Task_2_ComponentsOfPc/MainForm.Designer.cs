@@ -43,20 +43,20 @@
             this.listBoxSalesList.FormattingEnabled = true;
             this.listBoxSalesList.Location = new System.Drawing.Point(13, 13);
             this.listBoxSalesList.Name = "listBoxSalesList";
-            this.listBoxSalesList.Size = new System.Drawing.Size(120, 95);
+            this.listBoxSalesList.Size = new System.Drawing.Size(586, 95);
             this.listBoxSalesList.TabIndex = 0;
             // 
             // comboBoxNameOfAllGoods
             // 
             this.comboBoxNameOfAllGoods.FormattingEnabled = true;
-            this.comboBoxNameOfAllGoods.Location = new System.Drawing.Point(140, 13);
+            this.comboBoxNameOfAllGoods.Location = new System.Drawing.Point(138, 145);
             this.comboBoxNameOfAllGoods.Name = "comboBoxNameOfAllGoods";
             this.comboBoxNameOfAllGoods.Size = new System.Drawing.Size(475, 21);
             this.comboBoxNameOfAllGoods.TabIndex = 1;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(191, 50);
+            this.textBoxPrice.Location = new System.Drawing.Point(189, 182);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.ReadOnly = true;
             this.textBoxPrice.Size = new System.Drawing.Size(70, 21);
@@ -64,7 +64,7 @@
             // 
             // buttonAddToSalesList
             // 
-            this.buttonAddToSalesList.Location = new System.Drawing.Point(43, 229);
+            this.buttonAddToSalesList.Location = new System.Drawing.Point(41, 361);
             this.buttonAddToSalesList.Name = "buttonAddToSalesList";
             this.buttonAddToSalesList.Size = new System.Drawing.Size(197, 23);
             this.buttonAddToSalesList.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // buttonAddProduct
             // 
-            this.buttonAddProduct.Location = new System.Drawing.Point(150, 111);
+            this.buttonAddProduct.Location = new System.Drawing.Point(148, 243);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(124, 23);
             this.buttonAddProduct.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             // buttonEditProduct
             // 
-            this.buttonEditProduct.Location = new System.Drawing.Point(150, 140);
+            this.buttonEditProduct.Location = new System.Drawing.Point(148, 272);
             this.buttonEditProduct.Name = "buttonEditProduct";
             this.buttonEditProduct.Size = new System.Drawing.Size(124, 39);
             this.buttonEditProduct.TabIndex = 6;
@@ -101,7 +101,7 @@
             // labelPriceProduct
             // 
             this.labelPriceProduct.AutoSize = true;
-            this.labelPriceProduct.Location = new System.Drawing.Point(147, 53);
+            this.labelPriceProduct.Location = new System.Drawing.Point(145, 185);
             this.labelPriceProduct.Name = "labelPriceProduct";
             this.labelPriceProduct.Size = new System.Drawing.Size(33, 13);
             this.labelPriceProduct.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 264);
+            this.ClientSize = new System.Drawing.Size(627, 469);
             this.Controls.Add(this.labelPriceProduct);
             this.Controls.Add(this.buttonEditProduct);
             this.Controls.Add(this.buttonAddProduct);

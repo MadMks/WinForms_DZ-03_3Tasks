@@ -15,7 +15,7 @@ namespace Task_2_ComponentsOfPc
 
         public override string ToString()
         {
-            return $"{Name}, {Characteristic}, {Description}";
+            return $"{Name} | {Characteristic} | {Description}";
         }
     }
 }
