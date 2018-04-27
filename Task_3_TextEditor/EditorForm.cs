@@ -15,11 +15,6 @@ namespace Task_3_TextEditor
         private TextBox textBoxMain;
 
 
-        public EditorForm() // TODO FIX
-        {
-            InitializeComponent();
-        }
-
         public EditorForm(TextBox textBox)
         {
             InitializeComponent();
@@ -41,5 +36,7 @@ namespace Task_3_TextEditor
         {
             this.textBoxMain.Text = this.textBoxTextForEdit.Text;
         }
+
+
     }
 }

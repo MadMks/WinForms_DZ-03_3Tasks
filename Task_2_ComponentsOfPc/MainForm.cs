@@ -34,7 +34,6 @@ namespace Task_2_ComponentsOfPc
                         Name = "NVidia RX-450",
                         Characteristic = "2 Gb, GDDR4",
                         Description = "Вентиляторы Wing-Blade + радиатор",
-                        //Price = 10000
                         Price = 1
                     },
                     new Product
@@ -42,7 +41,6 @@ namespace Task_2_ComponentsOfPc
                         Name = "Жесткий диск Western Digital",
                         Characteristic = "500 Gb, 5400rpm",
                         Description = "Внутренний",
-                        //Price = 1226
                         Price = 2
                     },
                     new Product
@@ -50,7 +48,6 @@ namespace Task_2_ComponentsOfPc
                         Name = "Материнская плата Asus EX-B250-V7",
                         Characteristic = "s1151,Intel B250",
                         Description = "Нет встроенного RAID",
-                        //Price = 2599
                         Price = 3
                     }
                 }
@@ -119,5 +116,7 @@ namespace Task_2_ComponentsOfPc
 
             this.labelTotalCost.Text = this.TotalCost.ToString();
         }
+
+
     }
 }

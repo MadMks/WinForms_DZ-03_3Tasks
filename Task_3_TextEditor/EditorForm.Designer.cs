@@ -44,18 +44,18 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(153, 199);
+            this.buttonCancel.Location = new System.Drawing.Point(322, 167);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(110, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(110, 33);
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Отменить";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonSaveText
             // 
-            this.buttonSaveText.Location = new System.Drawing.Point(12, 199);
+            this.buttonSaveText.Location = new System.Drawing.Point(13, 167);
             this.buttonSaveText.Name = "buttonSaveText";
-            this.buttonSaveText.Size = new System.Drawing.Size(115, 23);
+            this.buttonSaveText.Size = new System.Drawing.Size(115, 33);
             this.buttonSaveText.TabIndex = 3;
             this.buttonSaveText.Text = "Сохранить";
             this.buttonSaveText.UseVisualStyleBackColor = true;
@@ -64,12 +64,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 264);
+            this.ClientSize = new System.Drawing.Size(444, 213);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSaveText);
             this.Controls.Add(this.textBoxTextForEdit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "EditorForm";
-            this.Text = "EditorForm";
+            this.Text = "Редактирование";
             this.ResumeLayout(false);
             this.PerformLayout();
 

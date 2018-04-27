@@ -45,9 +45,9 @@
             // 
             // buttonLoadFile
             // 
-            this.buttonLoadFile.Location = new System.Drawing.Point(13, 191);
+            this.buttonLoadFile.Location = new System.Drawing.Point(12, 166);
             this.buttonLoadFile.Name = "buttonLoadFile";
-            this.buttonLoadFile.Size = new System.Drawing.Size(115, 23);
+            this.buttonLoadFile.Size = new System.Drawing.Size(115, 36);
             this.buttonLoadFile.TabIndex = 1;
             this.buttonLoadFile.Text = "Загрузить файл";
             this.buttonLoadFile.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@
             // buttonEditFile
             // 
             this.buttonEditFile.Enabled = false;
-            this.buttonEditFile.Location = new System.Drawing.Point(154, 191);
+            this.buttonEditFile.Location = new System.Drawing.Point(322, 166);
             this.buttonEditFile.Name = "buttonEditFile";
-            this.buttonEditFile.Size = new System.Drawing.Size(110, 23);
+            this.buttonEditFile.Size = new System.Drawing.Size(110, 36);
             this.buttonEditFile.TabIndex = 2;
             this.buttonEditFile.Text = "Редактировать";
             this.buttonEditFile.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 243);
+            this.ClientSize = new System.Drawing.Size(444, 217);
             this.Controls.Add(this.buttonEditFile);
             this.Controls.Add(this.buttonLoadFile);
             this.Controls.Add(this.textBoxTextOfSelectedFile);

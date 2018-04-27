@@ -57,5 +57,7 @@ namespace Task_3_TextEditor
                 }
             }
         }
+
+
     }
 }
